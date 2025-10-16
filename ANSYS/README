@@ -1,0 +1,8 @@
+Date: 16/10/2025
+Author: Uttam Cadambi Padmanaban
+
+This is to demonstrate the use of a mesh exported from ANSYS fluent in OpenFOAM. You simply have to place the *.msh file from ANSYS Fluent (in ASCII format) in this directory. Make sure to run the bash script once that is complete.
+
+Please note: the bash script contains the createMeshDict step. This step assumes that the patch names that are generated from the autoPatch 60 -overwrite step are consistent with the corresponding patches. For example - for THIS particular case, running autoPatch generates 5 patches and the patch called auto0 is the inlet patch. This information was used to create the createPatchDict file. 
+
+However, for a different *.msh file, this could be different. One way to check is to run autoPatch 60 -overwrite, open paraview, check which patch name belongs to which particular patch, and accordingly change the createPatchDict file. 

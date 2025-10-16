@@ -21,12 +21,12 @@ patches
 (
     {
         // Name of new patch
-        name symmetry1;
+        name inlet;
 
         // Dictionary to construct new patch from
         patchInfo
         {
-            type symmetry;
+            type patch;
         }
 
         // How to construct: either from 'patches' or 'set'
@@ -35,12 +35,12 @@ patches
     }
     {
         // Name of new patch
-        name symmetry2;
+        name outlet;
 
         // Dictionary to construct new patch from
         patchInfo
         {
-            type symmetry;
+            type patch;
         }
 
         // How to construct: either from 'patches' or 'set'
@@ -50,27 +50,41 @@ patches
 
     {
         // Name of new patch
-        name wing;
+        name front;
+
+        // Dictionary to construct new patch from
+        patchInfo
+        {
+            type symmetry;
+        }
+
+        // How to construct: either from 'patches' or 'set'
+        constructFrom patches;
+        patches (auto2);
+    }
+
+    {
+        // Name of new patch
+        name back;
+
+        // Dictionary to construct new patch from
+        patchInfo
+        {
+            type symmetry;
+        }
+
+        // How to construct: either from 'patches' or 'set'
+        constructFrom patches;
+        patches (auto3);
+    }
+        {
+        // Name of new patch
+        name airfoil;
 
         // Dictionary to construct new patch from
         patchInfo
         {
             type wall;
-        }
-
-        // How to construct: either from 'patches' or 'set'
-        constructFrom patches;
-        patches (auto2 auto3);
-    }
-
-    {
-        // Name of new patch
-        name inout;
-
-        // Dictionary to construct new patch from
-        patchInfo
-        {
-            type patch;
         }
 
         // How to construct: either from 'patches' or 'set'

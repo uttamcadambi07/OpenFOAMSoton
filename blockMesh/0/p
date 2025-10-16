@@ -22,18 +22,18 @@ boundaryField
 {
     inlet
     {
-        type            cyclic;//zeroGradient;
+        type            zeroGradient;
     }
 
     outlet
     {
-        type            cyclic;//fixedValue;
-        //value           uniform 1;
+        type            fixedValue;
+        value           uniform 1;
     }
 
     topWall
     {
-        type            zeroGradient;
+        type            symmetry;
     }
 
     bottomWall
@@ -43,7 +43,7 @@ boundaryField
 
     frontAndBack
     {
-        type            empty;
+        type            symmetry;
     }
 }
 

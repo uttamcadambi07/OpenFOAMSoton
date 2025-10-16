@@ -22,20 +22,20 @@ boundaryField
 {
     inlet
     {
-        type            cyclic; //fixedValue;
-        //value            $internalField;
+        type            fixedValue;
+        value            $internalField;
     }
 
     outlet
     {
-        type            cyclic; //fixedValue;
+        type            zeroGradient; //fixedValue;
        // value            $internalField;
     }
 
     topWall
     {
-        type            nutLowReWallFunction;
-        value           uniform 0;
+        type            symmetry;
+
     }
 
     bottomWall
@@ -47,7 +47,7 @@ boundaryField
 
     frontAndBack
     {
-        type            empty;
+        type            symmetry;
     }
 }
 

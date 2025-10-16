@@ -1,0 +1,10 @@
+Date: 16/10/2025
+Author: Uttam Cadambi Padmanaban
+
+This is used to demonstrate the working of checkMesh. 
+
+Run the bash script to check the mesh quality.
+
+I have deliberately increased the aspect ratio of the cells. This is to demomstrate the use of foamToVTK utility that can help visualize the bad cells.
+
+Please ensure that the OpenFOAM environment is sourced before running the bash script. 

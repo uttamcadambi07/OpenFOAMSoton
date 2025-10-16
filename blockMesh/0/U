@@ -22,19 +22,19 @@ boundaryField
 {
     inlet
     {
-        type            cyclic;
-        //value           uniform (1 0 0);
+        type            fixedValue;
+        value           uniform (1 0 0);
     }
 
     outlet
     {
-       // type            zeroGradient;
-	  type		 cyclic;
+      type            zeroGradient;
+
     }
 
     topWall
     {
-        type            noSlip;
+        type            symmetry;
     }
 
     bottomWall
@@ -44,7 +44,7 @@ boundaryField
 
     frontAndBack
     {
-        type            empty;
+        type            symmetry;
     }
 }
 
