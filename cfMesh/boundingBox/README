@@ -1,0 +1,9 @@
+Date: 16/10/2025
+Author: Uttam Cadambi Padmanaban
+
+This is used to create the bounding box to be used in conjunction with CfMesh.
+
+The goal is to create a single hexahedral block and then only extract the top, bottom, inlet and outlet faces (refer to the pdf for instructions, also posted below for convenience).
+
+surfaceMeshTriangulate -patches '(inlet outlet top bottom)' bb.stl
+

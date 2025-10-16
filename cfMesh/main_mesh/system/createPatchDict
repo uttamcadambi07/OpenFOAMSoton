@@ -1,0 +1,115 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      createPatchDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Do a synchronisation of coupled points after creation of any patches.
+// Note: this does not work with points that are on multiple coupled patches
+//       with transformations (i.e. cyclics).
+pointSync false;
+
+// Optional: Write cyclic matches into .obj format; defaults to false.
+writeCyclicMatch  false;
+
+// Patches to create.
+patches
+(
+    {
+        //- Master side patch
+        name            airfoil;
+        patchInfo
+        {
+            type            wall;
+
+        }
+        constructFrom patches;
+        patches (airfoil);
+    }
+
+    {
+        //- Master side patch
+        name            inlet;
+        patchInfo
+        {
+            type            patch;
+
+        }
+        constructFrom patches;
+        patches (inlet);
+    }
+
+    {
+        //- Master side patch
+        name            outlet;
+        patchInfo
+        {
+            type            patch;
+
+        }
+        constructFrom patches;
+        patches (outlet);
+    }
+
+    {
+        //- Master side patch
+        name            top;
+        patchInfo
+        {
+            type            symmetry;
+
+        }
+        constructFrom patches;
+        patches (top);
+    }
+    
+    {
+        //- Master side patch
+        name            bottom;
+        patchInfo
+        {
+            type            wall;
+
+        }
+        constructFrom patches;
+        patches (bottom);
+    }
+    
+    {
+        //- Master side patch
+        name            front;
+        patchInfo
+        {
+            type            symmetry;
+
+        }
+        constructFrom patches;
+        patches (bottomEmptyFaces);
+    }  
+
+    {
+        //- Master side patch
+        name            back;
+        patchInfo
+        {
+            type            symmetry;
+
+        }
+        constructFrom patches;
+        patches (topEmptyFaces);
+    }  
+   
+);
+
+// ************************************************************************* //

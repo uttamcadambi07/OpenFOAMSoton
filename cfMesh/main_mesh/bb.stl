@@ -1,0 +1,64 @@
+solid top
+ facet normal 0 1 0
+  outer loop
+   vertex -3.25 1.6 -0.05
+   vertex -3.25 1.6 0.05
+   vertex 3.75 1.6 0.05
+  endloop
+ endfacet
+ facet normal 0 1 0
+  outer loop
+   vertex -3.25 1.6 -0.05
+   vertex 3.75 1.6 0.05
+   vertex 3.75 1.6 -0.05
+  endloop
+ endfacet
+endsolid top
+solid bottom
+ facet normal 0 -1 0
+  outer loop
+   vertex -3.25 -0.4 -0.05
+   vertex 3.75 -0.4 -0.05
+   vertex 3.75 -0.4 0.05
+  endloop
+ endfacet
+ facet normal 0 -1 0
+  outer loop
+   vertex -3.25 -0.4 -0.05
+   vertex 3.75 -0.4 0.05
+   vertex -3.25 -0.4 0.05
+  endloop
+ endfacet
+endsolid bottom
+solid inlet
+ facet normal -1 0 0
+  outer loop
+   vertex -3.25 -0.4 -0.05
+   vertex -3.25 -0.4 0.05
+   vertex -3.25 1.6 0.05
+  endloop
+ endfacet
+ facet normal -1 0 0
+  outer loop
+   vertex -3.25 -0.4 -0.05
+   vertex -3.25 1.6 0.05
+   vertex -3.25 1.6 -0.05
+  endloop
+ endfacet
+endsolid inlet
+solid outlet
+ facet normal 1 0 0
+  outer loop
+   vertex 3.75 -0.4 -0.05
+   vertex 3.75 1.6 -0.05
+   vertex 3.75 1.6 0.05
+  endloop
+ endfacet
+ facet normal 1 0 0
+  outer loop
+   vertex 3.75 -0.4 -0.05
+   vertex 3.75 1.6 0.05
+   vertex 3.75 -0.4 0.05
+  endloop
+ endfacet
+endsolid outlet

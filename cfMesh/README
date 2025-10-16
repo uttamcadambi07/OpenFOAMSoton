@@ -1,0 +1,6 @@
+Date: 16/10/2025
+Author: Uttam Cadambi Padmanaban
+
+There are two directories. 
+1.boundingBox - used to create the bounding box for meshing using cfMesh
+2.main_mesh - used to mesh using cfMesh by combining the bounding box that was generated in step 1 and the STL file of the object that you wish to mesh. 

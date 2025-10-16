@@ -1,0 +1,105 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                |
+| \\      /  F ield         | cfMesh: A library for mesh generation          |
+|  \\    /   O peration     |                                                |
+|   \\  /    A nd           | Author: Franjo Juretic                         |
+|    \\/     M anipulation  | E-mail: franjo.juretic@c-fields.com            |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version   2.0;
+    format    ascii;
+    class     dictionary;
+    location  "system";
+    object    meshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+surfaceFile "airfoil.fms";
+
+minCellSize 0.021;
+
+maxCellSize 0.021;
+
+boundaryCellSize 0.021;
+
+localRefinement
+{
+    "airfoil"
+    {
+        cellSize 0.001;
+        //additionalRefinementLevels 4;
+        //refinementThickness 0.005;
+    }
+}
+
+
+objectRefinements
+{/*
+	wakeBox
+	{
+		type		box;
+		cellSize		0.01;
+		centre		(0.2 0 0);
+		lengthX		3;
+		lengthY		0.5;
+		lengthZ		0.1;
+	}
+	wakeBox1
+	{
+		type		box;
+		cellSize		0.08;
+		centre		(9 -0.08 0);
+		lengthX		29;
+		lengthY		6;
+		lengthZ		0.1;
+	}
+	vortexBox
+	{
+		type		box;
+		cellSize		0.05;
+		centre		(10 0 0);
+		lengthX		25;
+		lengthY		3;
+		lengthZ		0.1;
+	}
+	/*
+	region1
+	{
+		type		box;
+		cellSize		40;
+		centre		(300 285 18.565);
+		lengthX		3000;
+		lengthY		1430;
+		lengthZ		600;
+	}
+	region2
+	{
+		type		box;
+		cellSize		60;
+		centre		(500 285 18.565);
+		lengthX		6000;
+		lengthY		1800;
+		lengthZ		900;
+	}*/
+}
+
+boundaryLayers
+{
+patchBoundaryLayers
+{/*
+	yMin
+	{
+	nLayers 40;
+	thicknessRatio 1.14;
+	maxFirstLayerThickness 0.00008;
+	allowDiscontinuity 0;
+	}
+	*/
+
+}
+
+}
+
+// ************************************************************************* //

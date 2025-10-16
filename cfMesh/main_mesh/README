@@ -1,0 +1,13 @@
+Date: 16/10/2025
+Author: Uttam Cadambi Padmanaban
+
+This is used to demonstrate the working of cfMesh. 
+
+There are three settings:
+1. The most basic one
+2. The selective refinement
+3. The boundary layer
+
+Use the runCfMesh.sh (by typing ./runCfMesh in the terminal) and pick the case of your choice.
+
+Please ensure that the OpenFOAM environment is sourced before running the bash script. 

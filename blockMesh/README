@@ -1,0 +1,12 @@
+Date: 16/10/2025
+Author: Uttam Cadambi Padmanaban
+
+This is used to demonstrate the working of blockMesh. 
+
+There are two cases:
+1. Flat plate boundary layer
+2. Cylinder.
+
+Use the runMesh.sh (by typing ./runMesh in the terminal) and pick the case of your choice.
+
+Please ensure that the OpenFOAM environment is sourced before running the bash script. 
