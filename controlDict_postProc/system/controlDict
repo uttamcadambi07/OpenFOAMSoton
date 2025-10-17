@@ -1,0 +1,89 @@
+/*--------------------------------*- C++ -*---------------------------------*\ 
+| ========                 |                                                 | 
+| \      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           | 
+|  \    /   O peration     | Version:  v1812                                 | 
+|   \  /    A nd           | Web:      www.OpenFOAM.com                      | 
+|    \/     M anipulation  |                                                 | 
+\*--------------------------------------------------------------------------*/ 
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+startFrom       startTime;
+startTime       0;
+stopAt          endTime;
+endTime         5000;
+deltaT          1;
+writeControl    timeStep;
+writeInterval   500;
+purgeWrite      0;
+writeFormat     ascii;
+writePrecision  16;
+writeCompression off;
+timeFormat      general;
+timePrecision   16;
+runTimeModifiable true;
+
+DebugSwitches
+{
+    SolverPerformance 1;
+}
+functions
+{
+    // Your existing wallShearStress function
+    wallShearStress1
+    {
+        type            wallShearStress;
+        libs            ("libfieldFunctionObjects.so");
+        patches         (airfoil);
+        writeControl    timeStep;
+        writeInterval   100;
+    }
+
+    // New yPlus function
+    yPlus1
+    {
+        type            yPlus;
+        libs            ("libutilityFunctionObjects.so");
+        patches         (airfoil);
+        writeControl    timeStep;
+        writeInterval   100;
+    }
+
+    // New function to write Reynolds Stress R
+    turbulenceProperties
+    {
+        type            turbulenceFields;
+        libs            ("libfieldFunctionObjects.so");
+        fields          (R);
+        writeControl    timeStep;
+        writeInterval   100;
+    }
+
+    // Your existing forceCoeffs function (uncommented for clarity)
+    forceCoeffs1
+    {
+        type            forceCoeffs;
+        libs            ("libforces.so");
+        patches         (airfoil);
+        log             yes;
+        liftDir         (0 1 0);
+        dragDir         (-1 0 0);
+        pitchAxis       (0 0 1);
+        CofR            (0 0 0);
+        magUInf         1;
+        lRef            1;
+        rhoInf          1;
+        rho	  rhoInf;
+        Aref            0.1;
+        executeControl  timeStep;
+        executeInterval 1;
+        writeControl    timeStep;
+        writeInterval   100;
+    }
+}

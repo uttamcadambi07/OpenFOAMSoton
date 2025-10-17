@@ -1,0 +1,11 @@
+Date: 16/10/2025
+Author: Uttam Cadambi Padmanaban
+
+We will look at three post processing commands in this directory. 
+1. Wall shear stress
+2. yPlus
+3. Reynolds stress 
+
+Please source the OpenFOAM environment before running the bash script. The postProcessed utilities are stored in the time directories. 
+
+They are also stored in the postProcessing directory under the respective postProcess command name.
